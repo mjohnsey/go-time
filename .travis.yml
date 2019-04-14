@@ -3,8 +3,7 @@ sudo: false
 matrix:
   include:
     - go: 1.x
-      env: LATEST=true
-      env: GO111MODULE=on
+      env: GO111MODULE=on LATEST=true
     - go: 1.11.x
       env: GO111MODULE=on
     - go: tip
