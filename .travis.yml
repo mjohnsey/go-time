@@ -45,4 +45,3 @@ deploy:
   on:
     repo: mjohnsey/go-time
     condition: $LATEST = true
-    tags: true
