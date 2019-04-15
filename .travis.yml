@@ -40,6 +40,7 @@ deploy:
       - go-time_linux_amd64
       - go-time_linux_arm
       - go-time_linux_arm64
+      - go-time_linux_386
   on:
     repo: mjohnsey/go-time
     condition: $LATEST = true
