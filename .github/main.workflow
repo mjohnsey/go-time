@@ -1,7 +1,6 @@
 workflow "Build and deploy on push" {
   on = "push"
   resolves = [
-    "Setup Go for use with actions",
     "Filters for GitHub Actions",
   ]
 }
