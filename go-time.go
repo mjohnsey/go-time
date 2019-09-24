@@ -56,7 +56,7 @@ func main() {
 
 	locs := make([]*LocationTime, 0)
 
-	locs = append(locs, LocationTime{}.NewLocationTime("Merissa/Olivier", "America/New_York"))
+	locs = append(locs, LocationTime{}.NewLocationTime("NYC", "America/New_York"))
 	locs = append(locs, LocationTime{}.NewLocationTime("Memphis", "America/Chicago"))
 	locs = append(locs, LocationTime{}.NewLocationTime("Seattle", "America/Los_Angeles"))
 
