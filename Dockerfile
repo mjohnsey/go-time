@@ -1,3 +1,7 @@
+# Usage:
+# docker build -t go-time . && \
+# docker run -it --rm -v ${HOME}/.go-time.toml:/root/.go-time.toml go-time
+
 FROM golang:alpine as builder
 RUN mkdir /build
 WORKDIR /build
