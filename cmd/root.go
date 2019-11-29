@@ -21,7 +21,7 @@ var rootCmd = &cobra.Command{
 	Use:   "go-time",
 	Short: "Worldclock built for bitbar",
 	Run: func(cmd *cobra.Command, args []string) {
-		entries := viper.Get("time_entries").([]interface{})
+		entries := viper.Get("time_entries")
 		log.Info(entries)
 		if !viper.GetBool("ignore") && entries == nil {
 			log.Fatalln("Please add entries to time_entries or ignore using -i")
@@ -35,7 +35,7 @@ var rootCmd = &cobra.Command{
 		if entries != nil {
 			locs := make([]*lib.LocationTime, 0)
 
-			for _, entry := range entries {
+			for _, entry := range entries.([]interface{}) {
 				e := entry.(map[string]interface{})
 				locs = append(locs, lib.LocationTime{}.NewLocationTime(e["name"].(string), e["tz"].(string)))
 			}
