@@ -10,7 +10,6 @@ COPY go.sum .
 
 RUN go mod download
 COPY . .
-ARG opts
 RUN GOARCH=amd64 CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o go-time go-time.go
 
 FROM amd64/alpine
