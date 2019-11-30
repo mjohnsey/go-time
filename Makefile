@@ -15,6 +15,9 @@ ARM32v7_IMAGE_ID=$(shell docker images ${IMAGE_NAME}:${ARM32v7_TAG} -q)
 .PHONY: build-all
 build-all: build-amd64 build-arm64 build-arm32v7
 
+.PHONY: publish-all
+publish-all: publish-amd64 publish-arm64 publish-arm32v7
+
 .PHONY: build-amd64
 build-amd64:
 	docker build -f dockerfiles/amd64/Dockerfile \
@@ -49,6 +52,6 @@ build-arm32v7:
 .PHONY: publish-arm32v7
 publish-arm32v7:
 	docker tag "${ARM32v7_IMAGE_ID}" ${GH_IMAGE}:${ARM32v7_TAG} && \
-	docker push ${GH_IMAGE}:${ARM64_TAG} && \
+	docker push ${GH_IMAGE}:${ARM32v7_TAG} && \
 	docker tag "${ARM32v7_IMAGE_ID}" ${GH_IMAGE}:arm32v7-latest && \
 	docker push ${GH_IMAGE}:arm32v7-latest
