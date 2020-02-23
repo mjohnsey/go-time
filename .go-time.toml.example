@@ -1,0 +1,7 @@
+[[time_entries]]
+name="Memphis"
+tz="America/Chicago"
+
+[[time_entries]]
+name="Seattle"
+tz="America/Los_Angeles"
